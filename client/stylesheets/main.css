@@ -1,17 +1,20 @@
-#father-profit-view > div:nth-child(2) > ul > li > div {
-    display: block;
-    margin: 0 auto;
-    width: 80%;
+#father-profit-view > div:nth-child(1) > h3 {
+	background-color: #1CBABC;
+	padding: 10px 0;
+	text-align: center;
+	border-radius: 5px;
+	color: #fff;
 }
 
-#father-profit-view > div:nth-child(2) > ul > li {
-    height: 100px;
+#mother-profit-view > div:nth-child(1) > h3 {
+	background-color: #CE5973;
+	padding: 10px 0;
+	text-align: center;
+	border-radius: 5px;	
+	color: #fff;
 }
 
-#father-profit-view > div:nth-child(2) > ul {
-    background-color: #1CBABC;
-    border-radius: 5px;
-    border: none;
-    color: #fff;
-    font-size: 20px;
+#main-profit-view > h1 {
+	font-size: 100px;
+	text-align: center;
 }
