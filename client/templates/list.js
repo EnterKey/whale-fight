@@ -1,4 +1,4 @@
-Template.list.rendered = function(){
+Template.list.rendered = function() {
     $('#chart-container').highcharts({
         title: {
             text: '연도별 세뱃돈 총액',
@@ -19,7 +19,7 @@ Template.list.rendered = function(){
             }]
         },
         tooltip: {
-//                        valueSuffix: '°C'
+            //                        valueSuffix: '°C'
         },
         legend: {
             layout: 'vertical',
@@ -37,11 +37,65 @@ Template.list.rendered = function(){
             color: '#CE5973'
         }]
     });
-    $("#main-profit-view > h1").letterfx({"fx":"spin","backwards":false,"timing":200,"fx_duration":"1000ms","letter_end":"restore","element_end":"restore"});
-    $("#father-profit-view > div:nth-child(1) > h3").letterfx({"fx":"spin","backwards":false,"timing":200,"fx_duration":"1000ms","letter_end":"restore","element_end":"restore"});
-    $("#mother-profit-view > div:nth-child(1) > h3").letterfx({"fx":"spin","backwards":false,"timing":200,"fx_duration":"1000ms","letter_end":"restore","element_end":"restore"});
+    $("#main-profit-view > h1").letterfx({
+        "fx": "spin",
+        "backwards": false,
+        "timing": 200,
+        "fx_duration": "1000ms",
+        "letter_end": "restore",
+        "element_end": "restore"
+    });
+    $("#father-profit-view > div:nth-child(1) > h3").letterfx({
+        "fx": "spin",
+        "backwards": false,
+        "timing": 200,
+        "fx_duration": "1000ms",
+        "letter_end": "restore",
+        "element_end": "restore"
+    });
+    $("#mother-profit-view > div:nth-child(1) > h3").letterfx({
+        "fx": "spin",
+        "backwards": false,
+        "timing": 200,
+        "fx_duration": "1000ms",
+        "letter_end": "restore",
+        "element_end": "restore"
+    });
 };
 
-if(Meteor.isClient) {
+Template.list.helpers({
+
+    moneyData: function(type) {
+
+
+        return moneyData.find({
+            'fm': type
+        });
+    },
+
+    totalAmount: function(type) {
+
+        var condition = {}
+
+        if (!!type === true) {
+
+            condition = {
+                'fm': type
+            };
+        }
+
+        var sum = 0;
+
+        moneyData.find(condtion).forEach(function(data) {
+
+            sum += data.amount;
+        });
+
+        return enComma(sum);
+    }
+
+});
+
+if (Meteor.isClient) {
 
 }
