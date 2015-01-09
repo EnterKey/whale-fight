@@ -1,6 +1,23 @@
 <template name="layout">
   	<div id="topBar">
-       <a href="/">기입</a> / <a href="/list">올해수확량</a>
+    <div id="whale-fight-header" class="notehub-header-class navbar navbar-inverse navbar-fixed-top nav-header" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="/">고래 싸움에 새우 개이득!!</a>
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"><a href="/">기입</a></span>
+                    <span class="icon-bar"><a href="/list">올해수확량</a></span>
+                </button>
+            </div>
+            <div class="collapse navbar-collapse">
+                <ul class="nav navbar-nav nav-header">
+                    <li><a href="/">용돈 기입</a></li>
+                    <li><a href="/list">올해 수확량</a></li>
+                </ul>
+            </div><!--/.nav-collapse -->
+        </div>
+    </div>
   	</div>
     <div id="main" class="container"> 
     	{{> yield}}
