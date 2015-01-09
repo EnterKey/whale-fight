@@ -1,21 +1,27 @@
-<template name="input">
-	<div id="thisyear" class="year">2015</div>
-	<div class="mf_toggle">
-    	<span>외가</span>
-    	<input id="mf_checkbox" type="checkbox" checked="checked">
-    	<span>친가</span>
-	</div>
-	<div class="relation">
-		<input id="given_name" type="text" placeholder="세뱃돈 주신 분 이름"/>
-	</div>
-	<div class="money_box">
-		<input type="button" id="money_btn-1" class="moneyBtn" name="1" value="+ 만원"/>
-		<input type="button" id="money_btn-2" class="moneyBtn" name="3" value="+ 3만원"/>
-		<input type="button" id="money_btn-3" class="moneyBtn" name="5" value="+ 5만원"/>
-		<input type="button" id="money_btn-4" class="moneyBtn" name="10" value="+ 10만원"/>
-		<input type="button" id="money_btn-5" class="moneyBtn" name="50" value="+ 50만원"/>
-		<input type="button" id="money_btn-delete" class="moneyBtn" name="0" value="x"/>
-	</div>
-	<div id="">총 <span id="total_money"></span>원</div>
+<template  name="input">
+	<div class="wrapper">
+		<div id="thisyear" class="year">2015</div>
+		<div class="mf_toggle">
+	    	<span>외가</span>
+	    	<input id="mf_checkbox" type="checkbox" checked="checked">
+	    	<span>친가</span>
+		</div>
+		<div id="">총 <span id="total_money">0</span>원</div>
 
+		<div class="relation">
+			<input id="given_name" type="text" placeholder="세뱃돈 주신 분 이름"/>
+		</div>
+
+		<div class="money_box">
+			<input type="button" id="money_btn-1" class="moneyBtn" name="1" value="+ 만원"/>
+			<input type="button" id="money_btn-2" class="moneyBtn" name="3" value="+ 3만원"/>
+			<input type="button" id="money_btn-3" class="moneyBtn" name="5" value="+ 5만원"/>
+			<input type="button" id="money_btn-4" class="moneyBtn" name="10" value="+ 10만원"/>
+			<input type="button" id="money_btn-5" class="moneyBtn" name="50" value="+ 50만원"/>
+			<input type="button" id="money_btn-delete" class="moneyBtn" name="0" value="x"/>
+		</div>
+		<div id=""><span id="each_money">0</span>원</div>
+
+		<input type="button" id="submit_btn" value="감사합니다."/>
+	</div>
 </template>
