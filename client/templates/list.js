@@ -1,4 +1,25 @@
 Template.list.rendered = function() {
+    var dataF = [6000, 7000, 1, 1];
+    var sumF = 0;
+    moneyData.find({'fm': 'f'}).forEach(function(data) {
+
+        sumF += data.amount;
+    });
+
+    dataF.push(sumF)
+
+    var dataM = [10000, 1000, 30000, 1000];
+    var sumM = 0;
+
+    moneyData.find({'fm': 'm'}).forEach(function(data) {
+
+        sumM += data.amount;
+    });
+
+    dataM.push(sumM);
+
+    console.log(dataF, dataM);
+
     $('#chart-container').highcharts({
         title: {
             text: '연도별 세뱃돈 총액',
@@ -29,11 +50,11 @@ Template.list.rendered = function() {
         },
         series: [{
             name: '친가',
-            data: [60000, 70000, 80000, 10000, 180000],
+            data: dataF,
             color: '#1CBABC'
         }, {
             name: '외가',
-            data: [70000, 100000, 10000, 20000, 160000],
+            data: dataM,
             color: '#CE5973'
         }]
     });
