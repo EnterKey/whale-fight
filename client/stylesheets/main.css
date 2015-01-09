@@ -1,0 +1,17 @@
+#father-profit-view > div:nth-child(2) > ul > li > div {
+    display: block;
+    margin: 0 auto;
+    width: 80%;
+}
+
+#father-profit-view > div:nth-child(2) > ul > li {
+    height: 100px;
+}
+
+#father-profit-view > div:nth-child(2) > ul {
+    background-color: #1CBABC;
+    border-radius: 5px;
+    border: none;
+    color: #fff;
+    font-size: 20px;
+}
