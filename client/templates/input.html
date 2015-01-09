@@ -1,5 +1,60 @@
-<template  name="input">
-	<div class="wrapper">
+
+<template name="input">
+    <div class="row upper-push">
+        <div id="main-profit-view" class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <h1><i class="fa fa-check-square-o"></i> 총액: 0</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-1 col-md-1 sm-hidden xs-hidden"></div>
+        <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="col-sm-2">
+                    </div>
+                    <div class="col-sm-10">
+
+                        <button class="btn btn-lg parent-btn father-btn" id="father-btn">친 가
+                        </button>
+                        <button class="btn btn-lg parent-btn" id="mother-btn">외 가
+                        </button>
+
+                    </div>
+                </div>
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <form class="form-horizontal">
+                        <div class="form-group form-group-lg">
+                            <label class="col-sm-2 control-label" for="formGroupInputLarge">관계:</label>
+                            <div class="col-sm-10">
+                                <input class="form-control" type="text" id="given_name" placeholder="예시) 할머니, 고모부, 이모 등">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <form class="form-horizontal">
+                        <div class="form-group form-group-lg">
+                            <label class="col-sm-2 control-label" for="formGroupInputLarge">금액:</label>
+                            <div class="col-sm-10">
+                                <input class="form-control" type="number" id="inputAmount" placeholder="숫자로만 입력해주세요!">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <button type="button" class="btn btn-success btn-lg pull-right" id="submit-money">IN MY POCKET!</button>
+                </div>
+                <div id="dancing-gif">
+                    <img src="dancing.gif" alt="">
+                    <h1>"요시! 그란도 시즌!!!"</h1>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-1 col-md-1 sm-hidden xs-hidden"></div>
+    </div>
+
+
+<!-- 	<div class="wrapper">
 		<div id="thisyear" class="year">2015</div>
 		<div class="mf_toggle">
 	    	<span>외가</span>
@@ -23,5 +78,6 @@
 		<div id=""><span id="each_money">0</span>원</div>
 
 		<input type="button" id="submit_btn" value="감사합니다."/>
-	</div>
+	</div> -->
+
 </template>
