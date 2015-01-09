@@ -2,7 +2,7 @@
     <tr>
         <td>#</td>
         <td>{{relName}}</td>
-        <td>{{amount}}</td>
+        <td>{{comma amount}}</td>
     </tr>
 </template>
 
@@ -28,7 +28,7 @@
                     </thead>
                     <tbody>
                         {{#each moneyData 'f'}}
-                            {{> moenyDataDetail}}
+                            {{> moneyDataDetail}}
                         {{/each}}
                     </tbody>
                 </table>
@@ -50,7 +50,7 @@
                     </thead>
                     <tbody>
                        {{#each moneyData 'm'}}
-                            {{> moenyDataDetail}}
+                            {{> moneyDataDetail}}
                         {{/each}}
                     </tbody>
                 </table>
