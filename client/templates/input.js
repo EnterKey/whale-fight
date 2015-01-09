@@ -1,6 +1,7 @@
 _eachAmount = "0";
 _totalAmount = 0;
 _checked = 1;
+_fm = 'f';
 
 sumAmount = function(amount) {
 
@@ -13,20 +14,6 @@ Template.input.rendered = function() {
     $("#each_money").html(_eachAmount);
 
     $("#dancing-gif").hide();
-    $("#submit-money").on("click", function(e) {
-        $("#dancing-gif").show(300);
-        $("#dancing-gif > h1").letterfx({
-            "fx": "smear",
-            "backwards": false,
-            "timing": 50,
-            "fx_duration": "1000ms",
-            "letter_end": "restore",
-            "element_end": "restore"
-        });
-        setTimeout(function() {
-            $("#dancing-gif").hide(300);
-        }, 5000);
-    });
 
     function switchBtnStyle() {
         $('.parent-btn').on('click', function(e) {
@@ -55,13 +42,37 @@ Template.input.events({
         }
 
         $("#each_money").html(_eachAmount);
+    },
+
+    'click #father-btn': function(e) {
+
+        _fm = 'f';
+
+    },
+
+    'click #mother-btn': function(e) {
+
+        _fm = 'm';
     }
 });
 
 
 Template.input.events({
-    'click #submit_btn': function(e) {
+    'click #submit-money': function(e) {
         var fm = "f";
+
+        $("#dancing-gif").show(300);
+        $("#dancing-gif > h1").letterfx({
+            "fx": "smear",
+            "backwards": false,
+            "timing": 50,
+            "fx_duration": "1000ms",
+            "letter_end": "restore",
+            "element_end": "restore"
+        });
+        setTimeout(function() {
+            $("#dancing-gif").hide(300);
+        }, 5000);
 
         if ($("#given_name").val() == "") {
             alert("세배돈 주신 분 누군지 기억하셔야해요.")
@@ -71,18 +82,20 @@ Template.input.events({
         //주신분 이름 : $("#given_name").val()
         //친가 외가: checked==1은 외가, checked==0은 친가
         //주신 액수: _eachAmount
-        if (_checked == 1) {
-            fm = "m";
-        } else {
-            fm = "f";
-        }
+        // if (_checked == 1) {
+        //     fm = "m";
+        // } else {
+        //     fm = "f";
+        // }
+        fm = _fm;
 
         var param = {
             year: "2015", // year (e.g. 2015)
             fm: fm, // type of father/mother side (e.g. 'f')
             relName: $("#given_name").val(), // name of relation (e.g. '삼촌')
-            amount: Number(unComma(_eachAmount)) // 금액 (e.g. 100000)
-        }
+            // amount: Number(unComma(_eachAmount)) // 금액 (e.g. 100000)
+            amount: Number($("#inputAmount").val())
+        };
 
         insertNewDatum(param);
 
@@ -90,6 +103,7 @@ Template.input.events({
         $("#total_money").html(enComma(_totalAmount));
 
         $("#given_name").val("");
+        $("#inputAmount").val("");
         _eachAmount = 0;
     }
 });
