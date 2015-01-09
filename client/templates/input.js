@@ -51,7 +51,7 @@ Template.input.events({
 		 		year: "2015",	// year (e.g. 2015)
 		 		fm: fm,	// type of father/mother side (e.g. 'f')
 		 		relName: $("#given_name").val(),// name of relation (e.g. '삼촌')
-		 		amount: _eachAmount	// 금액 (e.g. 100000)
+		 		amount: Number(unComma(_eachAmount))	// 금액 (e.g. 100000)
 		 }
 		 
 		insertNewDatum(param);

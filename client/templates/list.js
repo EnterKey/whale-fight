@@ -70,8 +70,13 @@ Template.list.helpers({
 
         return moneyData.find({
             'fm': type
+        }, {
+            sort: {
+                amount: -1
+            }
         });
     },
+
 
     totalAmount: function(type) {
 
@@ -86,7 +91,7 @@ Template.list.helpers({
 
         var sum = 0;
 
-        moneyData.find(condtion).forEach(function(data) {
+        moneyData.find(condition).forEach(function(data) {
 
             sum += data.amount;
         });
@@ -95,6 +100,15 @@ Template.list.helpers({
     }
 
 });
+
+Template.moneyDataDetail.helpers({
+
+    comma: function(data) {
+
+        return enComma(data);
+    }
+
+})
 
 if (Meteor.isClient) {
 
