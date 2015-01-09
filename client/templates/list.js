@@ -1,5 +1,5 @@
 Template.list.rendered = function() {
-    var dataF = [6000, 7000, 1, 1];
+    var dataF = [6000, 7000, 40000, 50000, 70000];
     var sumF = 0;
     moneyData.find({'fm': 'f'}).forEach(function(data) {
 
@@ -8,7 +8,7 @@ Template.list.rendered = function() {
 
     dataF.push(sumF)
 
-    var dataM = [10000, 1000, 30000, 1000];
+    var dataM = [10000, 1000, 30000, 90000, 60000];
     var sumM = 0;
 
     moneyData.find({'fm': 'm'}).forEach(function(data) {
